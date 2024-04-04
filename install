@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env REPLACE
 
 self=$(basename "$0")
 dotfiles=($(/bin/ls ./dotfiles| grep -v "$self"))
