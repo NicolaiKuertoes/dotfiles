@@ -1,12 +1,15 @@
 #!/bin/bash
 
 function replace() {
+    OS=$(uname)
+    if [[ "$OS" == "Linux" ]]; then
+        sed -i "s#REPLACE#$(echo $SHELL | cut -d / -f3)#" "$1";
+    elif [[ "$OS" == "Darwin" ]]; then
     sed -i "" "s#REPLACE#$(echo $SHELL | cut -d / -f3)#" "$1";
+    fi
 }
 
 replace "./install"
 replace "./dotfiles/aliases"
 
 chmod +x ./install
-
-echo "[i] Now run ./install"
