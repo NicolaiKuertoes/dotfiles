@@ -1,0 +1,28 @@
+#!/usr/bin/env zsh
+
+OS=$(uname)
+
+if [[ "$OS" == "Linux" ]]; then
+    alias ls='ls --group-directories-first --color=auto'
+    alias l='ls -lh --group-directories-first --color=auto'
+    alias ll='ls -lah --group-directories-first --color=auto'
+    alias cat='bat'  # sudo apt install -y bat
+
+elif [[ "$OS"  == "Darwin" ]]; then
+    alias ls='gls --group-directories-first --color=auto'  # brew install coreutils
+    alias l='gls -lh --group-directories-first --color=auto'
+    alias ll='gls -lah --group-directories-first --color=auto'
+    alias cat='batcat'  # brew install bat
+fi
+
+# navigation
+alias rep='cd ~/repos'
+alias dsk='cd ~/Desktop'
+alias dwn='cd ~/Downloads'
+
+# tmux
+# brew install tmux 
+# sudo apt install -y tmux
+alias tt='tmux ls'
+alias ts='tmux new -s'
+alias ta='tmux attach-session -t'

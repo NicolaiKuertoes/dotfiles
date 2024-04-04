@@ -1,0 +1,12 @@
+#!/bin/bash
+
+function replace() {
+    sed -i "" "s#REPLACE#$(echo $SHELL | cut -d / -f3)#" "$1";
+}
+
+replace "./install"
+replace "./dotfiles/aliases"
+
+chmod +x ./install
+
+echo "[i] Now run ./install"
