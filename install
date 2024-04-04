@@ -8,7 +8,7 @@ bashrc=".bashrc"
 
 # setup files
 for file in ${dotfiles[@]}; do
-    if [[ ! -L "$HOME/.$file" || ! -f "$HOME/.$file" ]]; then
+    if [[ (! -L "$HOME/.$file") && (! -f "$HOME/.$file") ]]; then
         ln -s $(realpath ./dotfiles/$file) "$HOME/.$file"
     fi
 done
