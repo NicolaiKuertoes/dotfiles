@@ -1,11 +1,12 @@
 #!/bin/bash
 
 function replace() {
+    shell=$(echo $SHELL | rev | cut -d '/' -f1 | rev)
     OS=$(uname)
     if [[ "$OS" == "Linux" ]]; then
-        sed -i "s#REPLACE#$(echo $SHELL | cut -d / -f3)#" "$1";
+        sed -i "s#REPLACE#$shell#" "$1";
     elif [[ "$OS" == "Darwin" ]]; then
-    sed -i "" "s#REPLACE#$(echo $SHELL | cut -d / -f3)#" "$1";
+    sed -i "" "s#REPLACE#$shell#" "$1";
     fi
 }
 
