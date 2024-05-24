@@ -1,6 +1,14 @@
 #!/usr/bin/env REPLACE
 
 OS=$(uname)
+shelly=$(echo $SHELL | rev | cut -d '/' -f1 | rev)
+
+if [[ "$shelly" == "zsh" ]]; then
+    alias reload='source ~/.zshrc'
+fi
+if [[ "$shelly" == "bash" ]]; then
+    alias reload='source ~/.bashrc'
+fi
 
 if [[ "$OS" == "Linux" ]]; then
     alias ls='ls --group-directories-first --color=auto'
