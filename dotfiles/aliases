@@ -31,6 +31,6 @@ alias dwn='cd ~/Downloads'
 # tmux
 # brew install tmux 
 # sudo apt install -y tmux
-alias tt='tmux ls'
+alias tt='tmux ls 2>/dev/null || echo "no running sessions"'
 alias ts='tmux new -s'
 alias ta='tmux attach-session -t'
