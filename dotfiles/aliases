@@ -15,6 +15,8 @@ if [[ "$OS" == "Linux" ]]; then
     alias l='ls -lh --group-directories-first --color=auto'
     alias ll='ls -lah --group-directories-first --color=auto'
     alias cat='batcat'  # sudo apt install -y bat
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
 
 elif [[ "$OS"  == "Darwin" ]]; then
     alias ls='gls --group-directories-first --color=auto'  # brew install coreutils
